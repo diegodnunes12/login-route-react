@@ -1,7 +1,7 @@
 import { css, styled } from 'styled-components';
 
 export const ButtonContainer = styled.button`
-    background: #565656;
+    background: #7f28b5;
     border-radius: 22px;
     position: relative;
 
@@ -14,12 +14,17 @@ export const ButtonContainer = styled.button`
         min-width: 167px;
         height: 33px;
 
-        background: #e4105d;
+        background: #7f28b5;
+
+        &:hover {
+            opacity: 0.6;
+            cursor: pointer;
+        }
 
         &::after {
             content: '';
             position: absolute;
-            border: solid 1px #4105d;
+            border: solid 1px #7f28b5;
             top: -5px;
             left: -6px;
             width: calc(100% + 10px);
