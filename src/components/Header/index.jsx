@@ -1,5 +1,6 @@
 import { BuscarInputContainer, Container, Input, Menu, MenuRight, Row, Wrapper } from "./styles";
 import { Button } from "../Button";
+import { Link } from 'react-router-dom';
 import logo from "../../assets/dio.svg";
 
 const Header = () => {
@@ -16,8 +17,9 @@ const Header = () => {
                 </Row>
                 <Row>
                     <MenuRight>Home</MenuRight>
-                    <Button title="Login"></Button>
-                    <Button title="Logon"></Button>
+                    <Button title="Sign-in" variant="secondary"></Button>
+                    <Button title="Create account"></Button>
+                    <Link to="/login">Login</Link>
                 </Row>
             </Container>
         </Wrapper>
