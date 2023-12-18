@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.main`
     max-width: 80%;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 3rem;
 
     section {
         display: flex;         
@@ -21,6 +21,7 @@ export const Title = styled.h1`
     font-weight: 700;
     font-size: 2rem;
     color: #fff;
+    margin-top: 30px;
 `
 
 export const TitleLogin = styled.h2`
@@ -30,6 +31,7 @@ export const TitleLogin = styled.h2`
     font-size: 2em;
     line-height: 2.5em;
     color: #fff;
+    margin-top: 20px;
 `
 
 export const SubtileLogin = styled.p`

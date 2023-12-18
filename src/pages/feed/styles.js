@@ -4,8 +4,6 @@ export const Container = styled.main`
     width: 100%;
     height: 420px;
 
-    background: linear-gradient(99.06deg, rgb(0, 0, 0) 45.8%, rgba(0, 0, 0, 0) 90.54%) center center / cover no-repeat, url("https://hermes.digitalinnovation.one/public/components/pages/home/header/banner-play.png");
-    background-position: center center;
     padding: 1rem 0;
 
     div {

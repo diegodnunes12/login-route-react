@@ -1,3 +1,4 @@
+import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { Container, TitleLogin, SubtileLogin, Title } from "./styles";
@@ -18,8 +19,9 @@ const Login = () => {
                         <TitleLogin>Are you registered yet?</TitleLogin>
                         <SubtileLogin>Log in and make the change</SubtileLogin>
                         <form>
-                            <Input placeholder="Email" type="email" leftIcon={<EmailSVGIcon />} />
-                            <Input placeholder="Password" type="password" leftIcon={<LockSVGIcon />} />
+                            <Input placeholder="Email" type="email" leftIcon={<EmailSVGIcon color="#ffffff" />} />
+                            <Input placeholder="Password" type="password" leftIcon={<LockSVGIcon color="#ffffff" />} />
+                            <Button title="SING IN"  />
                         </form>
                     </div>
                 </section>

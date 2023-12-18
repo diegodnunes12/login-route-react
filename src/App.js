@@ -1,3 +1,4 @@
+import { Feed } from './pages/feed';
 import { Home } from './pages/home';
 import { Login } from './pages/login';
 
@@ -12,8 +13,9 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/login" element={<Login />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/feed" element={<Feed />} />
         </Routes>
       </Router>
     </div>
