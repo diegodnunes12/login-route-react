@@ -1,10 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
-import { Container, TitleLogin, SubtileLogin, Title } from "./styles";
+import { Container, TitleLogin, SubtileLogin, Title, ContainerLinks } from "./styles";
 import { EmailSVGIcon, LockSVGIcon } from '@react-md/material-icons'
 
 const Login = () => {
+
+    const navigate = useNavigate();
+
+    const handleClickNavigateFeed = () => {
+        navigate('/feed')
+    }
+
     return (
         <>
             <Header />
@@ -21,7 +29,11 @@ const Login = () => {
                         <form>
                             <Input placeholder="Email" type="email" leftIcon={<EmailSVGIcon color="#ffffff" />} />
                             <Input placeholder="Password" type="password" leftIcon={<LockSVGIcon color="#ffffff" />} />
-                            <Button title="SING IN"  />
+                            <Button title="SING IN" onClick={handleClickNavigateFeed} />
+                            <ContainerLinks>
+                                <a href="#" class="pass">Forgot my password</a>
+                                <a href="#" class="create">Create an account</a>
+                            </ContainerLinks>
                         </form>
                     </div>
                 </section>

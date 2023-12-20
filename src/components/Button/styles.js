@@ -9,6 +9,7 @@ export const ButtonContainer = styled.button`
     color: #fff;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px, rgba(0, 0, 0, 0.1) 0px 5px 6px;    
     padding: 6px 16px;
+    margin-left: 12px;
 
     &:hover {
         cursor: pointer;

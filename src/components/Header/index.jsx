@@ -1,25 +1,55 @@
-import { BuscarInputContainer, Container, Input, Menu, MenuRight, Row, Wrapper } from "./styles";
+import { BuscarInputContainer, Container, Input, Menu, MenuRight, Row, UserPicture, Wrapper } from "./styles";
 import { Button } from "../Button";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import logo from "../../assets/dio.svg";
 
-const Header = () => {
+const Header = ({auth}) => {
+
+    const navigate = useNavigate();
+
+    const handleClickNavigateLogin = () => {
+        navigate('/login')
+    }
+
+    const handleClickNavigateHome = () => {
+        navigate('/')
+    }
+
+    const handleClickNavigateFeed = () => {
+        navigate('/feed')
+    }
+
     return (
         <Wrapper>
             <Container>
                 <Row>
-                    <img src={logo} alt="Dio's logo" />
-                    <BuscarInputContainer>
-                        <Input placeholder="Search" />
-                    </BuscarInputContainer>
-                    <Menu>Live Code</Menu>
-                    <Menu>Global</Menu>
+                    
+                    { auth ? (
+                        <>
+                            <img src={logo} alt="Dio's logo" onClick={handleClickNavigateFeed} />
+
+                            <BuscarInputContainer>
+                            <Input placeholder="Search" />
+                            </BuscarInputContainer>
+                            <Menu>Live Code</Menu>
+                            <Menu>Global</Menu>
+                        </>
+                    ) : (
+                        <>
+                            <img src={logo} alt="Dio's logo" onClick={handleClickNavigateHome} />
+                        </>
+                    ) }
                 </Row>
                 <Row>
-                    <MenuRight>Home</MenuRight>
-                    <Button title="Sign-in" variant="secondary"></Button>
-                    <Button title="Create account"></Button>
-                    <Link to="/login">Login</Link>
+                    { auth ? (
+                        <UserPicture src="https://avatars.githubusercontent.com/u/6638272" />
+                    ) : (
+                        <>
+                            <MenuRight onClick={handleClickNavigateHome} href="#">Home</MenuRight>
+                            <Button title="Sign-in" variant="secondary" onClick={handleClickNavigateLogin}></Button>
+                            <Button title="Create account"></Button>
+                        </>
+                    ) }                    
                 </Row>
             </Container>
         </Wrapper>

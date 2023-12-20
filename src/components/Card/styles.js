@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.article`
     width: 100%;
     background-color: #3b4651;
     position: relative;
     margin-bottom: 24px;
+
+    max-width: 90%;
+    padding: 1rem;
+    margin: 20px 30px 20px 0;
 `
 
 export const ImageBackground = styled.img`
@@ -12,16 +16,15 @@ export const ImageBackground = styled.img`
     height: 180px;
 `
 
-export const Content = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+export const Content = styled.section`
+    width: 80%;
     padding: 12px;
 `
 
-export const UserInfo = styled.div`
+export const UserInfo = styled.section`
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin-bottom: 12px;
 
     div {
@@ -54,7 +57,7 @@ export const UserPicture = styled.img`
     border: solid 3px #fff;
 `
 
-export const PostInfo = styled.div`
+export const PostInfo = styled.section`
     margin-bottom: 12px;
 
     h4 {
@@ -76,7 +79,7 @@ export const PostInfo = styled.div`
     }
 `
 
-export const HasInfo = styled.div`
+export const HasInfo = styled.section`
     margin-top: 12px;
 
     h4 {
@@ -95,5 +98,11 @@ export const HasInfo = styled.div`
         font-size: 12px;
         line-height: 22px;
         color: #fff;
+        display: flex;
+        margin-top: 15px;
+
+        svg {
+            width: 20px;
+        }
     }
 `

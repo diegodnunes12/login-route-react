@@ -1,33 +1,39 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
-    width: 100%;
+    width: 80%;
     height: 420px;
-
+    display: flex;
+    flex-direction: row;
     padding: 1rem 0;
+    margin: 0 auto;
 
-    div {
-        max-width: 80%;
-        padding: 1rem;
-        margin: 0 auto;
+    section.content {
+        display: flex;
+        flex-direction: column;
+
+        &.feed {
+            width: 90%;
+        }
     }
 `
 
-export const Title = styled.h2`
+export const Title = styled.h3`
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 56px;
-    width: 620px;
-    margin-bottom: 40px;
-    margin-top: 20px;
-    line-height: 74px;
-
+    font-size: 15px;
+    margin-top: 30px;
     color: #fff;
 `
 
 export const TitleHighLight = styled.span`
-    color: #7f28b5;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    margin-top: 30px;
+    color: #9c9a9a;
 `
 
 export const TextContent = styled.p`

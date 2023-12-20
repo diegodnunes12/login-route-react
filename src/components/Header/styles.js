@@ -63,7 +63,6 @@ export const MenuRight = styled.a`
     font-style: normal;
     line-height: 25px;
     color: #fff;
-    margin-right: 12px;
     text-decoration: none;
 `
 
