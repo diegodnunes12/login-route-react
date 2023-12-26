@@ -1,5 +1,34 @@
 {
-    "users": [
-      { "id": 1, "name": "Diego Nunes", "email": "diegodnunes12@gmail.com", "password": "123456" }
-    ]
-  }
+  "users": [
+    {
+      "id": 1,
+      "name": "Diego Nunes",
+      "email": "diegodnunes12@gmail.com",
+      "password": "123456"
+    },
+    {
+      "fullName": "diego dleon",
+      "email": "diego.nunes@pricefy.com.br",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "fullName": "José Paulo",
+      "email": "jose@gmail.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "fullName": "Maria de Lourdes",
+      "email": "maria@gmail.com",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "fullName": "Maria de Tereza",
+      "email": "maria.tereza@gmail.com",
+      "password": "123456",
+      "id": 5
+    }
+  ]
+}
