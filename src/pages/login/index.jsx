@@ -27,6 +27,10 @@ const Login = () => {
         }
     });
 
+    const handleClickNavigateSignup = () => {
+        navigate('/sign-up')
+    }
+
     const sendSubmitForm = async formData => {
         try {
             const { data } = await api.get(`users?email=${formData.email}&password=${formData.password}`);
@@ -59,7 +63,7 @@ const Login = () => {
                             <Button title="SING IN" type="submit" />
                             <ContainerLinks>
                                 <a href="#" className="pass">Forgot my password</a>
-                                <a href="#" className="create">Create an account</a>
+                                <a href="#" className="create" onClick={handleClickNavigateSignup}>Create an account</a>
                             </ContainerLinks>
                         </form>
                     </div>

@@ -11,6 +11,10 @@ const Header = ({auth}) => {
         navigate('/login')
     }
 
+    const handleClickNavigateSignup = () => {
+        navigate('/sign-up')
+    }
+
     const handleClickNavigateHome = () => {
         navigate('/')
     }
@@ -47,7 +51,7 @@ const Header = ({auth}) => {
                         <>
                             <MenuRight onClick={handleClickNavigateHome} href="#">Home</MenuRight>
                             <Button title="Sign-in" variant="secondary" onClick={handleClickNavigateLogin}></Button>
-                            <Button title="Create account"></Button>
+                            <Button title="Create account" onClick={handleClickNavigateSignup}></Button>
                         </>
                     ) }                    
                 </Row>
