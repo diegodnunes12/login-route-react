@@ -1,6 +1,7 @@
 import { css, styled } from 'styled-components';
+import { IButtonStyled } from './types';
 
-export const ButtonContainer = styled.button`
+export const ButtonContainer = styled.button<IButtonStyled>`
     background: #7f28b5;
     border-radius: 8px;
     border: solid 1px #7f28b5;

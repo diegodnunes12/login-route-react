@@ -2,8 +2,9 @@ import { BuscarInputContainer, Container, Input, Menu, MenuRight, Row, UserPictu
 import { Button } from "../Button";
 import { useNavigate } from 'react-router-dom';
 import logo from "../../assets/dio.svg";
+import { IHeader } from "./types";
 
-const Header = ({auth}) => {
+const Header = ({auth}: IHeader) => {
 
     const navigate = useNavigate();
 

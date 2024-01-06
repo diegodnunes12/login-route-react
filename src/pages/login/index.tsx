@@ -8,6 +8,7 @@ import { EmailSVGIcon, LockSVGIcon } from '@react-md/material-icons';
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { api } from "../../services/api";
+import { IFormData } from "./types";
 
 const schema = yup
   .object({
@@ -18,7 +19,7 @@ const schema = yup
 const Login = () => {
 
     const navigate = useNavigate();
-    const { control, handleSubmit, formState: { errors, isValid } } = useForm({
+    const { control, handleSubmit, formState: { errors, isValid } } = useForm<IFormData>({
         resolver: yupResolver(schema),
         mode:  "onChange",
         defaultValues: {
@@ -31,7 +32,7 @@ const Login = () => {
         navigate('/sign-up')
     }
 
-    const sendSubmitForm = async formData => {
+    const sendSubmitForm = async (formData: IFormData) => {
         try {
             const { data } = await api.get(`users?email=${formData.email}&password=${formData.password}`);
             if(data.length === 1) {
@@ -46,7 +47,7 @@ const Login = () => {
 
     return (
         <>
-            <Header />
+            <Header auth={false} />
             <Container>
                 <section>
                     <div className="content">

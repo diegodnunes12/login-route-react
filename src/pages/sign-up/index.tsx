@@ -31,7 +31,7 @@ const Signup = () => {
     }
   });
   
-  const handleSubmitForm = async (form) => {
+  const handleSubmitForm = async (form: any) => {
     try {
       if(isValid) {
         const { data } = await api.post(`/users`, form);
@@ -40,14 +40,14 @@ const Signup = () => {
           navigate("/feed");
         }
       }
-    } catch (error) {
+    } catch (error: any) {
       alert(error.message);
     }
   }
 
   return (
     <>
-      <Header />
+      <Header auth={false} />
       <Main>
         <Section>
           <H1>
@@ -58,9 +58,9 @@ const Signup = () => {
           <H2>Start now free</H2>
           <P>Create your account and make the change.</P>
           <Form onSubmit={handleSubmit(handleSubmitForm)}>
-            <Input type="text" name="fullName" placeholder="Full Name" control={control} leftIcon={<AccountBoxSVGIcon width="20px" errorMessage={errors?.fullName?.message} />} />
-            <Input type="email" name="email" placeholder="E-mail" control={control} leftIcon={<EmailSVGIcon width="20px" />} errorMessage={errors?.email?.message} />
-            <Input type="password" name="password" placeholder="Password" control={control} leftIcon={<LockSVGIcon width="20px" errorMessage={errors?.password?.message} />} />
+            <Input type="text" name="fullName" placeholder="Full Name" control={control} leftIcon={<AccountBoxSVGIcon />} errorMessage={errors?.fullName?.message} />
+            <Input type="email" name="email" placeholder="E-mail" control={control} leftIcon={<EmailSVGIcon />} errorMessage={errors?.email?.message} />
+            <Input type="password" name="password" placeholder="Password" control={control} leftIcon={<LockSVGIcon />} errorMessage={errors?.password?.message} />
             <Button title="Create my free account" type="submit" />
           </Form>
           <P>already have an account <A href="/login">Log in</A>.</P>

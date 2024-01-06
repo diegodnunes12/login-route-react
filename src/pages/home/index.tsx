@@ -13,7 +13,7 @@ const Home = () => {
 
     return (
         <>
-            <Header />
+            <Header auth={false} />
             <Container>
                 <div>
                     <Title>

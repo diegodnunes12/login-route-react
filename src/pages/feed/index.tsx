@@ -9,14 +9,14 @@ const Feed = () => {
         <>
             <Header auth={true} />
             <Container>
-               <section class="content feed">
+               <section className="content feed">
                     <Title>FEED</Title>
                     <Card />
                     <Card />
                     <Card />
                     <Card />
                </section>
-               <section class="content">
+               <section className="content">
                     <TitleHighLight># RANKING 5 TOP DA SEMANA</TitleHighLight>
                     <UserInfo percent={35} name="Diego Nunes" image="https://avatars.githubusercontent.com/u/6638272" />
                     <UserInfo percent={25} name="Diego Nunes" image="https://avatars.githubusercontent.com/u/6638272" />

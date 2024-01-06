@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { IUserInfoStyled } from "./types";
 
 export const Container = styled.main`
     display: flex;
@@ -25,7 +26,7 @@ export const NameText = styled.section`
     margin-bottom: 10px;
 `
 
-export const Progress = styled.section`
+export const Progress = styled.section<IUserInfoStyled>`
     width: 180px;
     height: 6px;
     background-color: #fff;
