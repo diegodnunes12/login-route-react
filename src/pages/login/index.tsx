@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
@@ -7,8 +6,9 @@ import { Container, TitleLogin, SubtileLogin, Title, ContainerLinks } from "./st
 import { EmailSVGIcon, LockSVGIcon } from '@react-md/material-icons';
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { api } from "../../services/api";
 import { IFormData } from "./types";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 const schema = yup
   .object({
@@ -17,8 +17,9 @@ const schema = yup
 }).required();
 
 const Login = () => {
-
     const navigate = useNavigate();
+    const { handleLogin } = useAuth();;
+
     const { control, handleSubmit, formState: { errors, isValid } } = useForm<IFormData>({
         resolver: yupResolver(schema),
         mode:  "onChange",
@@ -33,21 +34,12 @@ const Login = () => {
     }
 
     const sendSubmitForm = async (formData: IFormData) => {
-        try {
-            const { data } = await api.get(`users?email=${formData.email}&password=${formData.password}`);
-            if(data.length === 1) {
-                navigate('/feed');
-            } else {
-                alert("User not found");
-            }
-        } catch (error) {
-            alert("Error");
-        }
+        handleLogin(formData)
     };
 
     return (
         <>
-            <Header auth={false} />
+            <Header />
             <Container>
                 <section>
                     <div className="content">

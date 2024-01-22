@@ -7,7 +7,7 @@ import { UserInfo } from "../../components/UserInfo";
 const Feed = () => {
     return (
         <>
-            <Header auth={true} />
+            <Header />
             <Container>
                <section className="content feed">
                     <Title>FEED</Title>

@@ -79,3 +79,8 @@ export const Input = styled.input`
     border: 0;
     color: #fff;
 `
+
+export const Span = styled.span`
+    margin-left: 10px;
+    cursor: pointer;
+`

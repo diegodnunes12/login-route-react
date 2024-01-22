@@ -1,10 +1,12 @@
-import { BuscarInputContainer, Container, Input, Menu, MenuRight, Row, UserPicture, Wrapper } from "./styles";
+import { BuscarInputContainer, Container, Input, Menu, MenuRight, Row, Span, UserPicture, Wrapper } from "./styles";
 import { Button } from "../Button";
 import { useNavigate } from 'react-router-dom';
 import logo from "../../assets/dio.svg";
-import { IHeader } from "./types";
+import { useAuth } from "../../hooks/useAuth";
 
-const Header = ({auth}: IHeader) => {
+const Header = () => {
+
+    const { user, handleLogout } = useAuth();
 
     const navigate = useNavigate();
 
@@ -20,34 +22,32 @@ const Header = ({auth}: IHeader) => {
         navigate('/')
     }
 
-    const handleClickNavigateFeed = () => {
-        navigate('/feed')
+    const handleLogoutNavigate = () => {
+        handleLogout();
+        navigate('/');
     }
 
     return (
         <Wrapper>
             <Container>
                 <Row>
-                    
-                    { auth ? (
+                    <img src={logo} alt="Dio's logo" onClick={handleClickNavigateHome} />
+                    { user.id ? (
                         <>
-                            <img src={logo} alt="Dio's logo" onClick={handleClickNavigateFeed} />
-
                             <BuscarInputContainer>
                             <Input placeholder="Search" />
                             </BuscarInputContainer>
                             <Menu>Live Code</Menu>
                             <Menu>Global</Menu>
                         </>
-                    ) : (
-                        <>
-                            <img src={logo} alt="Dio's logo" onClick={handleClickNavigateHome} />
-                        </>
-                    ) }
+                    ) : null }
                 </Row>
                 <Row>
-                    { auth ? (
-                        <UserPicture src="https://avatars.githubusercontent.com/u/6638272" />
+                    { user.id ? (
+                        <>
+                            <UserPicture src="https://avatars.githubusercontent.com/u/6638272" />
+                            <Span onClick={handleLogoutNavigate}>Logout</Span>
+                        </>
                     ) : (
                         <>
                             <MenuRight onClick={handleClickNavigateHome} href="#">Home</MenuRight>

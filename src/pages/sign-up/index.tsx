@@ -47,7 +47,7 @@ const Signup = () => {
 
   return (
     <>
-      <Header auth={false} />
+      <Header />
       <Main>
         <Section>
           <H1>
